@@ -71,15 +71,15 @@ if (t2.x > 0.) {
 
    gl_FragColor = vec4(sqrt(c), 1.);             // Final pixel color
 }
----------------------------------------------------------------------
-Final Version... 
 
 </script>
    
 <script>
-addTextEditor(fss_script.innerHTML.split('---------------------------------------------------------------------'),
-              function() { canvas1.setFragmentShader(this.value); });
-gl_start(canvas1, vs_script.innerHTML);
+var vs = vs_script.innerHTML, fs = fs_script.innerHTML;
+
+addTextEditor(fs, function() { canvas1.setShaders(vs, this.value); });
+
+gl_start(canvas1, vs, fs);
 </script>
 
 
