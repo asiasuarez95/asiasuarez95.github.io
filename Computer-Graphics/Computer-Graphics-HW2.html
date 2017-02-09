@@ -238,7 +238,8 @@ Animate position of the sphere and light direction.
 ---------------------------------------------------------------------
 Final Step
 ---------------------------------------------------------------------
-
+  x               x
+---------------------------------------------------------------------
 varying vec3 vPos;                               // Position in image
 uniform float uTime;                             // Time
 vec3 LDir = normalize(vec3(-1.,-sin(uTime),.9));  // Light direction
@@ -254,8 +255,7 @@ vec2 raytraceSphere(vec3 V, vec3 W, vec4 S) {
 }
 
 void main() {
-   vec3 c = mix(vec3(vPos.y*.9,vPos.x,cos(.5)), 
-      vec3(vPos.y,cos(.5),vPos.x), vec3(0,.3,0));
+   vec3 c = mix(vec3(vPos.y*.9,vPos.x,cos(.5)), vec3(vPos.y,cos(.5),vPos.x), vec3(0,.3,0));                   // Dark background
 
 
 
