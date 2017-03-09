@@ -1,0 +1,121 @@
+<table>
+
+<tr>
+<td><canvas id=canvas1 width=400 height=300></td>
+<td width=50></td>
+<td>
+Skateboard Pro
+</td>
+</tr>
+
+<script src=drawlib1.js></script>
+<script>
+
+   canvas1.update = function(g) {
+      g.lineWidth = 5;
+
+      g.beginPath();
+      g.moveTo(0, 0);
+      g.lineTo(this.width, 0);
+      g.lineTo(this.width, this.height);
+      g.lineTo(0, this.height);
+      g.lineTo(0, 0);
+      g.stroke();
+
+
+      var x = this.cursor.x;
+      var y = this.cursor.y;
+      var z = this.cursor.z;
+      if (z == 0) {
+         x =  this.width  / 2 + 30 * Math.tan(time) ;
+         y = this.height / 2 + 30 * Math.cos(time*.1);
+      }
+
+
+
+
+      //neck
+      g.lineWidth= 5;
+      neckX = x +15;
+      neckY = y-40;
+      g.moveTo(neckX, neckY);
+      g.lineTo(x,y);
+      g.stroke();
+
+      // body
+      g.lineWidth= 5;
+      bodyX = x;
+      bodyY = y+50;
+      g.moveTo(bodyX , bodyY);
+      g.lineTo(x,y);
+      g.stroke();
+
+      //arm1
+      g.lineWidth= 5;
+      armX = x;
+      armY = y;
+      g.moveTo(armX, armY);
+      g.lineTo(x+30, y-20);
+
+      //arm2
+      g.lineWidth= 5;
+      armX2 = x;
+      armY2 = y;
+      g.moveTo(armX2, armY2);
+      g.lineTo(x-30, y + 30);
+
+      // Leg1
+      g.lineWidth= 5;
+      legX = x + 50;
+      legY = bodyY +50;
+      g.moveTo(legX, legY);
+      g.lineTo(bodyX,bodyY);
+      g.stroke();
+
+      // Leg2 - left
+      g.lineWidth= 5;
+      leg2X = x - 50;
+      leg2Y = bodyY +50;
+      g.moveTo(leg2X, leg2Y);
+      g.lineTo(bodyX,bodyY);
+      g.stroke();
+
+      //Head
+      g.lineWidth = 1;
+      g.moveTo(x+15, y-50);
+      for(var i=0; i<361; i++){
+         g.lineTo(neckX +20*Math.cos(i) + 10, neckY - 20*Math.sin(i) - 15);
+      }
+      g.stroke();
+
+     //Skateboard
+     g.lineWidth= 5;
+     g.moveTo(leg2X- 20, leg2Y + 10);
+     g.lineTo(legX +20,legY + 10);
+     g.stroke();
+
+     //Skateboard wheels1
+      g.lineWidth = 1;
+      g.moveTo(leg2X- 20, leg2Y + 10);
+      for(var i=0; i<361; i++){
+         g.lineTo(leg2X + 5* Math.cos(i) + 10, leg2Y - 5*Math.sin(i) +13);
+      }
+      g.stroke();
+
+      //Skateboard wheels2
+      g.lineWidth = 1;
+      g.moveTo(legX- 20, legY + 10);
+      for(var i=0; i<361; i++){
+         g.lineTo(legX + 5* Math.cos(i) + 10, legY - 5*Math.sin(i) +13);
+      }
+      g.stroke();
+
+      
+
+     
+
+     
+   }
+
+   draw2DCanvases([ canvas1 ]);
+</script>
