@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 var M = {};
-
+var stack = new Array();
 //////////////////////////////////////////////////////////////////////////////
 // Your task is to implement the following methods of object M:
 //////////////////////////////////////////////////////////////////////////////
@@ -30,25 +30,25 @@ M.restore   = function(m){
 // Modify m, rotating about the X axis.
 M.rotateX   = function(m, radians) {
   rotM =[1, 0, 0, 0,
-          0, cos(radians), -sin(radians), 0,
-          0, sin(radians), cos(radians), 0,
+          0, Math.cos(radians), -1* Math.sin(radians), 0,
+          0, Math.sin(radians), Math.cos(radians), 0,
           0, 0, 0, 1];
   M.matrixMultiply(m, rotM, m);
 } 
 
 // Modify m, rotating about the Y axis.
 M.rotateY   = function(m, radians) {
-  rotM = [cos(radians), 0, sin(radians), 0
+  rotM = [Math.cos(radians), 0, Math.sin(radians), 0
             0, 1, 0, 0,
-            -sin(radians), 0, cos(radians), 0,
+            -1* Math.sin(radians), 0, Math.cos(radians), 0,
             0, 0, 0, 1];
   M.matrixMultiply(m, rotM, m);
 } 
 
 // Modify m, rotating about the Z axis.
 M.rotateZ   = function(m, radians) {
-    rotM = [cos(radians), -sin(radians), 0, 0,
-              sin(radians), cos(radians), 0, 0,
+    rotM = [Math.cos(radians), -1* Math.sin(radians), 0, 0,
+              Math.sin(radians), Math.cos(radians), 0, 0,
               0, 0, 1, 0,
               0, 0, 0, 1];
     M.matrixMultiply(m, rotM, m);
@@ -79,7 +79,7 @@ M.scale     = function(m, v){
 
 // Return vec v transformed by matrix m.
 // M.transform = function(m, v){
-   
+
 //   return m; 
 //   } 
 // M.translate = function(m, v)       {           } // Modify m, translating by v[0],v[1],v[2].
