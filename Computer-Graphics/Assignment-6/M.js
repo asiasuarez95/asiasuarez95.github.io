@@ -30,8 +30,8 @@ M.restore   = function(m){
 // Modify m, rotating about the X axis.
 M.rotateX   = function(m, radians) {
   rotM =[1, 0, 0, 0,
-          0, Math.cos(radians), -1* Math.sin(radians), 0,
-          0, Math.sin(radians), Math.cos(radians), 0,
+          0, Math.cos(radians), Math.sin(radians), 0,
+          0, -1*Math.sin(radians), Math.cos(radians), 0,
           0, 0, 0, 1];
   M.matrixMultiply(m, rotM, m);
 } 
@@ -47,8 +47,8 @@ M.rotateY   = function(m, radians) {
 
 // Modify m, rotating about the Z axis.
 M.rotateZ   = function(m, radians) {
-    rotM = [Math.cos(radians), -1* Math.sin(radians), 0, 0,
-              Math.sin(radians), Math.cos(radians), 0, 0,
+    rotM = [Math.cos(radians), Math.sin(radians), 0, 0,
+              -1* Math.sin(radians), Math.cos(radians), 0, 0,
               0, 0, 1, 0,
               0, 0, 0, 1];
     M.matrixMultiply(m, rotM, m);
