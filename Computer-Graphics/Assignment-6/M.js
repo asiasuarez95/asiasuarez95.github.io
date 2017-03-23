@@ -38,10 +38,10 @@ M.rotateX   = function(m, radians) {
 
 // Modify m, rotating about the Y axis.
 M.rotateY   = function(m, radians) {
-  rotM = [Math.cos(radians), 0, Math.sin(radians), 0
-            0, 1, 0, 0,
-            -1* Math.sin(radians), 0, Math.cos(radians), 0,
-            0, 0, 0, 1];
+  rotM =[Math.cos(radians), 0, -1*Math.sin(radians), 0,
+          0, 1, 0, 0,
+          Math.sin(radians), 0, Math.cos(radians), 0,
+          0, 0, 0, 1];
   M.matrixMultiply(m, rotM, m);
 } 
 
