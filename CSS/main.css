@@ -1,29 +1,11 @@
 body{
 	background: black;
     font-family: "Optima", sans-serif;
+    color: black;
 }
 
-section.AboutMe img{
-	border-radius: 50%;
-    display:block;
-    margin: auto;
-    width:320px;
-    height:480px;
-}
 
-section.AboutMe article{
-	float: left;
-	width: 620px;
-	padding: 20px;
-
-	background: silver; /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(#6697C0, #A4C7E5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#6697C0, #A4C7E5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#6697C0, #A4C7E5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#6697C0, #A4C7E5); /* Standard syntax (must be last) */  
-}
-
-header img{
+#fristIm img{
 	display:block;
 	width:100%;
 }
@@ -34,4 +16,43 @@ section.AboutMe article h1{
 
 div.clear{
 	clear: both;
+}
+
+/*aghhhhh*/
+/*Carousel CSS stuff*/
+
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+#box-2 img{
+	border-radius: 50%;
+    display:block;
+    margin: auto;
+    width:320px;
+    height:480px;
+}
+#box-2{
+	background: silver; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#A34E85, #624982); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#A34E85, #624982); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#A34E85, #624982); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#A34E85, #624982); /* Standard syntax (must be last) */  
+    border-radius: 12px;
+    width:1212px;
+    height: 728px;
+}
+
+#box-2 article{
+	float: left;
+	width: 600px;
+	padding: 20px;
+
+	background: silver; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#6697C0, #A4C7E5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#6697C0, #A4C7E5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#6697C0, #A4C7E5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#6697C0, #A4C7E5); /* Standard syntax (must be last) */  
+    border-radius: 12px;
 }

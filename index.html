@@ -5,9 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href = "CSS/main.css">
+  <link rel="stylesheet" href = "css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="script/myscript.js"></script>
+
 </head>
 <body>
 
@@ -23,9 +25,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
         <li class="dropdown">
-          <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects <span class="caret"></span></a> -->
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Projects <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="Web-Design.html">Web Design</a></li>
@@ -52,29 +52,74 @@
   
 <div class="container">
 
-<!-- Place sudo-logo -->
-  <header> 
-    <img src="images/header.jpg">
-  </header>
+<!-- Start Carousel  -->
 
-  <!-- insert some sort of about me area -->
-  <section class= "AboutMe">
-    <article>
-    <h1> Asia Reneé Suarez</h1>
-      <p>I am currently a senior majoring in Computer Science and minoring in Mathematics. I actually transfered from Long Island University at the start of my junior year. Outside of school, I have various interests
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum accumsan dolor, quis gravida metus sodales ac. Nullam efficitur augue et quam fermentum dignissim. Quisque at eros turpis. Aliquam finibus, lectus eu blandit bibendum, libero ante condimentum erat, sed feugiat mi tellus elementum tellus. Cras fringilla sed massa non egestas. Fusce varius ipsum purus. Vivamus in mi velit. Aliquam ac mattis nisl, quis varius lorem. Etiam sem lacus, ultricies eget nulla vitae, ullamcorper faucibus ligula. Aenean facilisis mauris non sapien euismod sagittis.
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
 
-      Aliquam accumsan, neque non varius tempus, arcu turpis semper metus, ac vestibulum dui tortor eu ipsum. Cras suscipit, odio sed tempor dapibus, dui erat scelerisque ex, ut condimentum leo odio quis ante. In volutpat lorem semper, maximus justo ut, suscipit sem. Nullam nec eros et nibh porta egestas et non orci. Ut id elementum purus. Mauris fermentum, ligula ut volutpat lobortis, massa dui molestie risus, vitae rhoncus eros sapien a nulla. Pellentesque sem urna, dignissim ut vulputate vel, ornare nec neque. Aenean hendrerit lacus urna, nec placerat felis placerat ac. Etiam tincidunt pharetra facilisis. Mauris et eros sit amet turpis aliquam mollis. Proin convallis neque dui, quis blandit tellus dictum id. Nunc sodales sem mi, non interdum erat bibendum in. Mauris a urna accumsan, gravida nisi id, sollicitudin nunc. Maecenas tempor sagittis libero nec elementum. Nam quis justo purus. Ut congue condimentum hendrerit.</p>
-    </article>
-    <img src="images/asia.png">
-    <div class ="clear"></div>
-  </section>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
 
+      <div class="item active">
+        <div id = "fristIm">
+          <img src="images/header.jpg">
+        </div>
+      </div>
 
-
-  
-
+      <div class="item">
+        <div id = "box-2">
+          <article>
+            <h1> Asia Reneé Suarez</h1>
+            <p>I am currently a senior majoring in Computer Science and minoring in Mathematics. I actually transfered from Long Island University at the start of my junior year. Outside of school, I have various interests Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum accumsan dolor, quis gravida metus sodales ac. Nullam efficitur augue et quam fermentum dignissim. Quisque at eros turpis. Aliquam finibus, lectus eu blandit bibendum, libero ante condimentum erat, sed feugiat mi tellus elementum tellus. Cras fringilla sed massa non egestas. Fusce varius ipsum purus. Vivamus in mi velit. Aliquam ac mattis nisl, quis varius lorem. Etiam sem lacus, ultricies eget nulla vitae, ullamcorper faucibus ligula. Aenean facilisis mauris non sapien euismod sagittis.</p>
+          </article>
+          <img src="images/asia.png">        
+          <div class ="clear"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
