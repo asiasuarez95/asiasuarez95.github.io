@@ -1,8 +1,37 @@
 body{
-	background: black; /* For browsers that do not support gradients */
-    /*background: -webkit-linear-gradient(black, DarkCyan); /* For Safari 5.1 to 6.0 */*/
-    /*background: -o-linear-gradient(black, DarkCyan); /* For Opera 11.1 to 12.0 */*/
-    /*background: -moz-linear-gradient(black, DarkCyan); /* For Firefox 3.6 to 15 */*/
-    /*background: linear-gradient(black, DarkCyan); /* Standard syntax (must be last) */*/
+	background: black;
+    font-family: "Optima", sans-serif;
+}
 
+section.AboutMe img{
+	border-radius: 50%;
+    display:block;
+    margin: auto;
+    width:320px;
+    height:480px;
+}
+
+section.AboutMe article{
+	float: left;
+	width: 620px;
+	padding: 20px;
+
+	background: silver; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(#6697C0, #A4C7E5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#6697C0, #A4C7E5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#6697C0, #A4C7E5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#6697C0, #A4C7E5); /* Standard syntax (must be last) */  
+}
+
+header img{
+	display:block;
+	width:100%;
+}
+section.AboutMe article h1{
+	text-align: center;
+}
+
+
+div.clear{
+	clear: both;
 }
