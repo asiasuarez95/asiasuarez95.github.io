@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href = "CSS/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -22,7 +23,6 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../index.html">Home</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -50,58 +50,90 @@
   
 <div class="container">
   <h3>Computer Graphics</h3>
-  <p>Here is a list of homework assignments.
-  <p>Lets see... Test3</p>
-</div>
 
-<div class="container">
-  <h4>Projects</h4>
-  <h5>Homework One</h5>
-  <p>Homework One Instructions:
-  <p>Create your own original fragment shader example.  Be original. Create cool patterns, and things that animated over time. Use the sin() and cos() functions to make crazy stripes.
-  <p> View Homework 1  
-  <a href="Assignment-1\Computer-Graphics-HW1.html"> here </a>
-  .
-  </p>
+<!-- Start Carousel  -->
 
-  <h5>Homework Two</h5>
-  <p>Homework Two Instructions:
-  <p>Add multiple light sources. See if you can figure out how to make different colored lights. Create a second sphere. Hint: The visible sphere is the one with the lowest positive value of t. Animate the two spheres so that they intersect each other Add textures to your sphere(s) using functions such as sin(). Add a cool background gradient.
-  <p> View Homework 2 
-  <a href="Assignment-2/Computer-Graphics-HW2.html"> here </a>
-  .
-  </p>
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
 
-  <h5>Homework Three</h5>
-  <p>Homework Three Instructions:
-  <p>Implement Shadows. This should be very simple. As we said in class (and as you can see in the online notes), you just need to modify the code within the part of the Phong algorithm that loops over light sources. for each light source shoot a ray from the surface in the direction of that light source. If the ray hits another sphere, then don't add in the diffuse and specular reflection from that light.
-  <p> View Homework 3 
-  <a href="Assignment-3/Computer-Graphics-HW3.html"> here </a>
-  .
-  </p>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
 
-  <h5>Homework Four</h5>
-  <p>Creatively apply noise() and turbulence() based textures. Have fun with this. See whether you can create fun and aesthetic patterns. Use sin() and cos() functions together with the noise() and turbulence() functions to create interesting effects. Apply the textures to different parts of the rendering process to get striking or unusual effects. Use color.</p>
-  <p> View Homework 4
-  <a href="Assignment-4/Computer-Graphics-HW4.html"> here </a>
+      <div class="item active">
+        <div class = "assignment">
+        <article>
+          <h5>Assignment One</h5>
+          <p>Create your own original fragment shader example.  Be original. Create cool patterns, and things that animated over time. Use the sin() and cos() functions to make crazy stripes.</p>
+        </article>
 
-  <h5>Homework Five</h5>
-  <p> Create something cool and fun using the tools of the CanvasRenderingContext2D -- the same environment that we played with in class today.There are very few rules about this assignment other than to have fun with it and do something really awesome and creative. Make something that inspires you, perhaps a mini-game, a work of art, a short animation, a cool character or creature, or an interactive toy. Pretty much anything. The important thing is that you learn the tools while also using your imagination.</p>
-  <p> View Homework 5
-  <a href="Assignment-5/Computer-Graphics-HW5.html"> here </a>
+        <video width="320" height="240" controls autoplay>
+        <source src="videos/V-One.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
 
-  <h5>Homework Six</h5>
-  <p> Complete the implementation of the matrix class M.js.</p>
-  <p> View Homework 6
-  <a href="Assignment-6/Computer-Graphics-HW6.html"> here </a>
+        <div class ="clear"></div>
+        </div>
+      </div>
 
-  <h5>Homework Seven</h5>
-  <p> Add sphere and torus functions to S.js, and incorporate them into a working example. Be creative: Create a creature, an animated character, a snowman, or something else original.</p>
-  <p> View Homework 7
-  <a href="Assignment-7/Computer-Graphics-HW7.html"> here </a>
+      <div class="item">
+        <div class = "assignment">
+          <article>
+            <h5> Assignment Two</h5>
+            <p>Add multiple light sources. See if you can figure out how to make different colored lights. Create a second sphere. Hint: The visible sphere is the one with the lowest positive value of t. Animate the two spheres so that they intersect each other Add textures to your sphere(s) using functions such as sin(). Add a cool background gradient.</p>
+          </article>
+          <video width="320" height="240" controls autoplay>
+          <source src="videos/V-Two.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
 
-
+          <div class ="clear"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
