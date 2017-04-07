@@ -1,38 +1,88 @@
 body{
 	background: black;
 	color: white;
+	font-family: 'Miriam Libre';
 }
 
 h3{
 	text-align: center;
-	color: #595959;
-	font-size: 30px;
+	color: #00ff00;
+	font-size: 40px;
+	font-weight: bold;
+}
+h5{
+	color:#00ff00;
+	font-size: 20px;
+}
+a{
+	color: #00ff00;;
 }
 div.clear{
 	clear: both;
 }
 
-
- .carousel-inner > .item > img,
- .carousel-inner > .item > a > img {
-	width: 70%;
+#Spotlight{
+	background: #595959;
 	margin: auto;
+	padding: 30px;
+	width: 50%;
+	height: 60%;
+	border-style: inset;
+	border-color: #00ff00;
 }
 
-.assignment{
-	padding: 20px;
-	background:#595959;
-	width: 80%;
-	height: 50%;
-	margin: auto;
-
-} 
-.assignment article{
-	float: left;
-	color: white;
-	width: 550px;
-  	height: 100%
-}
-.assignment video{
+#Spotlight article{
+	padding-left: 20px;
 	float: right;
+	width: 50%;
 }
+
+#Spotlight img{
+	float:left;
+	width: 50%;
+	height: 50%;
+	padding-top: 7.5px;
+}
+
+.row{
+	margin: auto; 
+	width: 100%;
+}
+.blockOne{
+	float: left;
+	width: 28%; 
+
+	border-color: #00ff00;
+}
+.blockOne img{
+	width: 10%;
+	height: 10%
+	float: center;
+ }
+
+.blockTwo{
+	width: 20%;
+	float: center; 
+	border-style: dashed;
+	border-right: none;
+	border-left: none;
+
+	border-color: #00ff00;
+}
+.blockTwo img{
+	width: 10%;
+	height: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
