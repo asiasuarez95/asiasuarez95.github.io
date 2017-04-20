@@ -1,0 +1,104 @@
+<script src=M.js></script>
+<script src=S.js></script>
+<script src=lib2g.js></script>
+
+<body bgcolor=black text=white>
+<center>
+<canvas id='canvas1' width=600 height=600></canvas>
+</center>
+</body>
+
+<script id='vs_script' type='x-shader/x-vertex'>
+   attribute vec3 aPos, aNor;
+   varying   vec3 vPos, vNor;
+   uniform   mat4 matrix, invMatrix;
+   void main() {
+      vec4 pos = matrix * vec4(aPos, 1.);
+      vec4 nor = vec4(aNor, 0.) * invMatrix;
+
+// dot(nor, pos);
+// dot(nor * invMatrix, matrix * pos);
+// nor . invMatrix . matrix . pos
+// nor . (invMatrix . matrix) . pos
+// nor . pos
+
+      gl_Position = pos;
+      vPos = pos.xyz;
+      vNor = nor.xyz;
+   }
+</script>
+
+<script id='fs_script' type='x-shader/x-fragment'>
+varying vec3 vPos, vNor;
+uniform float uTime;
+vec3 phong(vec3 N, vec3 E, vec3 A, vec3 D, vec3 S, float power, vec3 L) {
+   vec3 c = A;            // Ambient color
+   L = normalize(L);
+   float d = max(0., dot(N, L));                     // Diffuse value
+   vec3  R = reflect(-L, N);
+   float s = pow(max(0., dot(E, R)), power);       // Specular value
+   c += vec3(1., 1., 1.) * ((d * D) + (s * S * .1*power));
+   return c;
+}
+
+void main() {
+ vec3 normal = normalize(vNor);
+ vec3 A = vec3(sin(.1),0,sin(.9));
+ vec3 D = vec3(.05,.5,.05);
+ vec3 S = vec3(1., 1., 1.);
+ float power = 4.;
+ vec3 L = vec3(1., 1., -1.);
+ vec3 c = phong(normal, vec3(0, 0, -1), A, D, S, power, L);
+ gl_FragColor = vec4(sqrt(c), .5);
+}
+</script>
+
+<script>
+
+var m = M.identityMatrix();
+
+var vs = vs_script.innerHTML, fs = fs_script.innerHTML;
+
+addTextEditor(fs, function() { canvas1.setShaders(vs, this.value); });
+
+var obj1, obj2, obj3;
+
+gl_start(canvas1, vs, fs,
+   function(time) {
+      M.identity(m);
+      M.rotateX(m, time);
+
+      M.save(m);
+      obj1.setMatrix(m);
+      M.restore(m);
+
+      M.save(m);
+        M.rotateY(time, m);
+        M.scale(m,0.3);
+        obj2.setMatrix(m);
+     M.restore(m);
+
+      M.identity(m);
+      M.rotateZ(time, m);
+      M.scale(m,0.1);
+      obj3.setMatrix(m);
+   }
+);
+   var scene = new Scene();
+
+   obj1 = new SceneObject();
+   obj1.setVertices(S.parametricMesh(S.sphere, 150, 5));
+   scene.addObject(obj1);
+
+   obj2 = new SceneObject();
+   obj2.setVertices(S.parametricMesh(S.tube, 128, 128));
+   scene.addObject(obj2);
+
+   obj3 = new SceneObject();
+   obj3.setVertices(S.parametricMesh(S.sphere, 128, 60));
+   scene.addObject(obj3);
+
+   canvas1.scene = scene;
+
+
+</script>
